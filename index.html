@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webby photo Editor</title>
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+ 
+
+</head>
+<style>
+    *{
+        margin:0px;padding: 0px;    }
+    .container
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .photoEditor
+    {
+        background: #7dbed68c;
+        width: 60vw;
+        height: 90vh;
+        display: flex;
+        border: 10px solid transparent;
+        border-radius: 20px;
+
+        
+    }
+
+    #previewImage
+    {
+       
+        width: 30vw;
+        height: 30vh;
+        margin: 50px;
+        max-width: 40vw;
+        max-height: max-content;
+
+     
+    
+    }
+
+    #imageInput
+    {
+        margin-left: 50px;
+    }
+
+   
+
+    .cards{
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+    button,.cards
+    {
+        width: 10vw;
+        height: 10vh;
+        
+    }
+    .blackwhite
+    {
+        filter: grayscale();
+    }
+    .colors
+    {
+        display: none;
+    }
+    .show
+    {
+        display: block;
+    }
+    .text
+    {
+      position: absolute;  
+      top: 15vh;
+      left: 25vw;
+
+    }
+    .textset
+    {
+        margin: 9%;
+        padding: 20px;
+        width: max-content;
+        border: 2px solid green;
+    }
+    .textmenu
+    {
+        display: none;
+    }
+   #bBtn,#contrast,#blur,#sepia,#invert,#saturate
+    {background: #86a4db;display:flex; margin: 1%; padding:2px; border:2px solid red ;}
+</style>
+
+<body>
+    <div class="container">
+     
+        <div class="photoEditor">
+       
+            <div class="photo">
+                 <div id="Nimg">
+                    <img id="previewImage" alt="Preview" style="max-width: 200px; max-height: 200px; position:relative;">
+
+                    <div class="text">
+              
+                    </div>
+                 </div>
+               
+                <br>
+                <input type="file" id="imageInput">
+             
+            </div>
+         
+            <div class="menu">
+                
+                <!-- <div class="textset">
+                     <button class="txtmenu">Text on image</button> 
+                    <div class="textmenu"> -->
+
+                   
+                    <input type="text"  name="text" id="text">  <br>
+                    <label for="text">X-axis</label>               <br>
+                    <input type="range" name="" id="">            <br>
+                    <label for="text">Y-axis</label>                <br>
+                    <input type="range" name="" id="">             <br>
+                    <label for="text">Font Weight</label>          <br>
+                    <input type="range" name="" id="">             <br>
+                    <label for="text">Font-Family</label>          <br>
+                    <input type="text" name="" id="">               <br>
+                   
+                </div>
+                    <br>
+                </div>
+                
+
+                <button id="B&W">
+                 border
+
+                </button>
+                <div class="colors">
+                    <label for="colorPicker">Choose a color:</label>
+                    <input type="color" name="colorPicker" id="colorPicker">
+                    <br>
+                    <label for="border_size">Change Border size</label>
+                    <input type="range" min="1" max="5" step ="0.2" name="border_size" id="border_size">
+
+                    
+                </div>
+                
+                <div id="bBtn">
+                    Brightness 
+                    <input type="range"   min="1" max="5" step ="0.2" id="brightness">
+                </div>
+                <div id="contrast">
+                    Contrast
+                    <input type="range"  min="1" max="5" step ="0.2" id="contrast">
+                </div>
+                <!-- <div id="blur">
+                    blur
+                    <input type="range"  min="1" max="5" step ="0.2" id="blur">
+                </div> -->
+                <div id="sepia">
+                    sepia
+                    <input type="range"  min="1" max="5" step ="0.2" id="blur">
+                </div>
+                <div id="invert">
+                    invert
+                    <input type="range"  min="1" max="5" step ="0.2" id="invert">
+                </div>
+                <div id="saturate">
+                    saturate
+                    <input type="range"  min="1" max="5" step ="0.2" id="saturate">
+                  
+                </div>
+              
+               
+    <button id="download" download >Download the image</button>
+            
+             
+            </div>
+        </div>
+      
+    </div>
+ 
+</body>
+<script src="./index.js"></script>
+</html>
